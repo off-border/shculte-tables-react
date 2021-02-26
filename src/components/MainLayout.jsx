@@ -1,9 +1,8 @@
 import Table from "./Table.jsx";
 
-const MainLayout = ({ rowSize }) => (
+const MainLayout = ({ numbers }) => (
     <main className="MainLayout">
-        rowSize: { rowSize }
-        <Table rowSize={rowSize}/>
+        <Table numbers={numbers}/>
     </main>
 );
 

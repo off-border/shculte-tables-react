@@ -18,7 +18,7 @@ describe("MainLayout.jsx", () => {
 
     beforeEach(() => {
         Table.spy.mockClear();
-        ({ container } = render(<MainLayout rowSize={123} />));
+        ({ container } = render(<MainLayout numbers={[1, 2, 3]} />));
 
     });
 
@@ -26,7 +26,7 @@ describe("MainLayout.jsx", () => {
         expect(container.querySelector(".Table")).toBeInTheDocument();
     });
 
-    it("passes rowSize to the table ", () => {
-        expect(Table.spy).toBeCalledWith({rowSize: 123}, {})
+    it("passes params to the table ", () => {
+        expect(Table.spy).toBeCalledWith({numbers: [1, 2, 3]}, {})
     });
 });
