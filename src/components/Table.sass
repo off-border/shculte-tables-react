@@ -1,0 +1,29 @@
+$cell-margin: 5%
+
+.Table
+    display: block
+    width: 40vw
+    height: 40vw
+    margin: 0 
+    padding: 0
+    // margin: auto
+    color: gray
+    font-weight: bold
+    &__cell
+        position: relative
+        display: inline-flex
+        box-sizing: border-box
+        width: 20%
+        height: 20%
+        align-items: center
+        justify-content: center
+        &:before
+            content: ''
+            position: absolute
+            top: $cell-margin
+            left: $cell-margin
+            right: $cell-margin
+            bottom: $cell-margin
+            border-radius: $cell-margin * 2
+            background-color: white
+            z-index: -1

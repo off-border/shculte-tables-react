@@ -12,7 +12,7 @@ const commits = {
     })
 }
 
-export default function (state = defaultState, action) {
+export default function reducer(state = defaultState, action) {
     console.log('----- reducer', action);
 
     return state;

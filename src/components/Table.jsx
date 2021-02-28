@@ -1,3 +1,5 @@
+import './Table.sass';
+
 const Table = ({ numbers = [" "], onCellClicked = () => {} }) => {
     return (
         <ul className="Table">

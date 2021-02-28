@@ -1,0 +1,21 @@
+.MainLayout
+    display: flex
+    min-height: 100vh
+    align-items: center
+    justify-content: stretch
+
+    &__column
+        flex-grow: 2
+        
+    &__column:first-child
+        display: flex
+        justify-content: flex-end
+        flex-grow: 1
+        padding-left: 10vw
+    
+    &__controls
+        text-align: center
+        .StartButton
+            width: 30%
+
+        
