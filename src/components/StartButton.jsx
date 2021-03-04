@@ -1,10 +1,9 @@
 import './StartButton.sass';
 
-export default function StartButton({ onClick }) {
-    // console.log('----onClick =', onClick);
+export default function StartButton({ onClick, children }) {
     return (
         <a className="StartButton" href="!#" onClick={() => onClick()}>
-            START
+            {children}
         </a>
     );
 }

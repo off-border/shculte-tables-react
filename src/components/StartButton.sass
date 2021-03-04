@@ -4,17 +4,23 @@ $start-button-color: darken($start-button-bgcolor, 43%)
 
 .StartButton
     display: inline-block
-    padding: 10px 30px
+    box-sizing: border-box
+    padding: 10px 20px
     margin: 6%
     border: 1px solid #bcd7c6
     border-radius: 20px
     background-color: $start-button-bgcolor
-    // color: #297929
     color: $start-button-color
     text-decoration: none
     font-weight: bold
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2)
+    transition: box-shadow .1s, transform .1s;
 
     &:hover
         background-color: lighten($start-button-bgcolor, 5%)
         color: lighten($start-button-color, 1%)
+
+    &:active
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, .2) 
+        transform: scale(.99)
+    
