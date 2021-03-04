@@ -1,9 +1,10 @@
 import './StartButton.sass';
 
 export default function StartButton({ onClick }) {
-  return (
-    <a className='StartButton' href="javascript:;" onClick={onClick}>
-      START
-    </a>
-  );
+    // console.log('----onClick =', onClick);
+    return (
+        <a className="StartButton" href="#" onClick={() => onClick()}>
+            START
+        </a>
+    );
 }

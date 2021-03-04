@@ -1,32 +1,30 @@
-import { render } from "@testing-library/react";
-import MainLayout from "./MainLayout";
+import { render } from '@testing-library/react';
+import { mount } from 'enzyme';
+import MainLayout from './MainLayout';
+import StartButton from './StartButton';
 
-import Table from "./Table";
+import Table from './Table';
 
-jest.mock("./Table.jsx", () => {
-    let spy = jest.fn(()=>{});
-    let MockTable = (...args) => {
-        spy(...args);
-        return <div className="Table">Hello World</div>;
-    };
-    MockTable.spy = spy;
-    return MockTable;
-});
-
-describe("MainLayout.jsx", () => {
-    let container;
+describe('MainLayout.jsx', () => {
+    let wrapper, startStopGame;
 
     beforeEach(() => {
-        Table.spy.mockClear();
-        ({ container } = render(<MainLayout numbers={[1, 2, 3]} />));
-
+        startStopGame = jest.fn();
+        wrapper = mount(
+            <MainLayout numbers={[1, 2, 3]} startStopGame={startStopGame} />
+        );
     });
 
-    it("renders the table ", () => {
-        expect(container.querySelector(".Table")).toBeInTheDocument();
+    it('renders the table ', () => {
+        expect(wrapper.find('.Table').exists()).toBe(true);
     });
 
-    it("passes params to the table ", () => {
-        expect(Table.spy).toBeCalledWith({numbers: [1, 2, 3]}, {})
+    it('passes params to the table', () => {
+        expect(wrapper.find(Table).props()).toEqual({ numbers: [1, 2, 3] });
+    });
+
+    it('starts the game when "start" button pressed', () => {
+        wrapper.find(StartButton).simulate('click');
+        expect(startStopGame).toBeCalled();
     });
 });

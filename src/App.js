@@ -1,8 +1,7 @@
-import { Provider } from "react-redux";
-import "./App.css";
-// import MainLayout from "./components/MainLayout.jsx";
-import MainLayoutContainer from "./components/MainLayoutContainer";
-import store from "./store/store.js";
+import { Provider } from 'react-redux';
+import './App.css';
+import MainLayoutContainer from './components/MainLayoutContainer';
+import store from './store/store.js';
 
 function App() {
     return (
