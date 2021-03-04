@@ -15,11 +15,12 @@ describe('actions.js', () => {
             expect(dispatch).toBeCalledWith({type: 'START_GAME'});
             expect(store.getState().gameState).toBe('started');
         });
-
-        // it('stops the game if it`s started', () => {
-        //     startStopGame(dispatch, 'started');
-        //     expect(dispatch).toBeCalledWith({type: 'STOP_GAME'});
-        // });
+        
+        it('stops the game if it`s started', () => {
+            startStopGame(dispatch, 'started');
+            expect(dispatch).toBeCalledWith({type: 'STOP_GAME'});
+            expect(store.getState().gameState).toBe('finished');
+        });
         
     });
 });

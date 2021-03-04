@@ -6,12 +6,17 @@ import { getNumbers, getGameState } from "../store/selectors";
 export function useApi() {
     const gameState = useSelector(getGameState);
     const numbers = useSelector(getNumbers);
+    const gameStarted = gameState === 'started';
+
     const dispatch = useDispatch();
     const startStopGame = () => actions.startStopGame(dispatch, gameState);
+    const goToNextNumber = () => actions.goToNextNumber(dispatch);
 
     return {
         numbers,
         gameState,
-        startStopGame
+        gameStarted,
+        startStopGame,
+        goToNextNumber
     }
 }

@@ -5,3 +5,7 @@ export function getNumbers(state) {
 export function getGameState(state) {
     return state.gameState;
 }
+
+export function nextNumber(state) {
+    return state.nextNumber;
+}
