@@ -8,6 +8,6 @@ export function startStopGame(dispatch, gameState) {
 
 export function goToNextNumber(dispatch) {
     dispatch({
-        type: 'GO_TO_NEXT_NUMBER',
+        type: 'SET_NEXT_NUMBER',
     });
 }

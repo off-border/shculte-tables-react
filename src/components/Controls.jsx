@@ -7,18 +7,16 @@ export default function Controls({
     startStopGame,
     goToNextNumber,
 }) {
+
     useEffect(() => {
-        function spaceListener(e) {
+        const spaceListener = e => {
             if (e.code === 'Space') {
-                console.log('---- next');
                 goToNextNumber();
             }
-        }
+        };
         document.addEventListener('keyup', spaceListener);
 
-        return function disableSpaceListener() {
-            window.removeEventListener('keyup', spaceListener);
-        };
+        return () => document.removeEventListener('keyup', spaceListener);
     }, [goToNextNumber]);
 
     return (

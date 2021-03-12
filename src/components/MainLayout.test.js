@@ -15,6 +15,8 @@ describe('MainLayout.jsx', () => {
         );
     });
 
+    afterEach(() => wrapper.unmount());
+
     it('renders the table ', () => {
         expect(wrapper.find('.Table').exists()).toBe(true);
     });

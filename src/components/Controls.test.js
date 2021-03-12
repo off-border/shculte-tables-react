@@ -10,8 +10,10 @@ describe('Controls.jsx', () => {
         wrapper = mount(<Controls {...{ goToNextNumber }} />);
     });
 
+    afterEach(() => wrapper.unmount());
+
     it('triggers goToNextNumber on SPACE press', async () => {
         document.dispatchEvent(new KeyboardEvent('keyup', { code: 'Space' }));
-        expect(goToNextNumber).toBeCalled();
+        expect(goToNextNumber.mock.calls.length).toBe(1);
     });
 });

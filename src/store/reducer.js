@@ -6,6 +6,7 @@ const defaultState = {
         .fill(0)
         .map((_, i) => i + 1),
     gameState: 'finished',
+    nextNumber: 1,
 };
 
 const commits = {
@@ -19,6 +20,11 @@ const commits = {
     STOP_GAME: (state) => ({
         ...state,
         gameState: 'finished',
+    }),
+
+    SET_NEXT_NUMBER: (state) => ({
+        ...state,
+        nextNumber: state.nextNumber + 1
     }),
 };
 
