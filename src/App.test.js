@@ -30,7 +30,11 @@ describe('App.js', () => {
 
     it('displays the next number in controls', () => {
         document.dispatchEvent(new KeyboardEvent('keyup', { code: 'Space' }));
-        // wrapper.find('.Controls__next').text()
         expect(wrapper.find('.Controls__next-number').text()).toBe('NEXT: 2');
     });
+
+    // it('applies modifier to the next cell', () => {
+    //     document.dispatchEvent(new KeyboardEvent('keyup', { code: 'Space' }));
+    //     expect(wrapper.find('.Table__cell-next').text()).toBe('2');
+    // });
 });
