@@ -2,7 +2,7 @@ import Controls from './Controls';
 import './MainLayout.sass';
 import Table from './Table.jsx';
 
-const MainLayout = ({ numbers, gameStarted, startStopGame, goToNextNumber }) => {
+const MainLayout = ({ numbers, gameStarted, startStopGame, goToNextNumber, nextNumber }) => {
     
 
     return (
@@ -11,7 +11,7 @@ const MainLayout = ({ numbers, gameStarted, startStopGame, goToNextNumber }) => 
                 <Table numbers={numbers} />
             </div>
             <div className="MainLayout__column MainLayout__controls">
-                <Controls {...{ gameStarted, startStopGame, goToNextNumber }}/>
+                <Controls {...{ gameStarted, startStopGame, goToNextNumber, nextNumber }}/>
             </div>
         </main>
     );

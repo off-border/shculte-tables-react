@@ -6,6 +6,6 @@ export function getGameState(state) {
     return state.gameState;
 }
 
-export function nextNumber(state) {
+export function getNextNumber(state) {
     return state.nextNumber;
 }

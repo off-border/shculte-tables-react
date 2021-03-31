@@ -6,6 +6,7 @@ export default function Controls({
     gameStarted,
     startStopGame,
     goToNextNumber,
+    nextNumber
 }) {
 
     useEffect(() => {
@@ -25,7 +26,7 @@ export default function Controls({
                 {gameStarted ? 'STOP' : 'START'}
             </StartButton>
 
-            <p className="Controls__next-number">NEXT:</p>
+            <p className="Controls__next-number">NEXT: {nextNumber}</p>
 
             {gameStarted ? (
                 <div className="Controls__hint">
