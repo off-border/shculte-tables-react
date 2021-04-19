@@ -20,7 +20,11 @@ describe("Table.jsx", () => {
     });
 
     it("applies modifier to the next number", () => {
-        expect( wrapper.find(".Table__cell-next").text()).toBe("3");
+        expect( wrapper.find(".Table__cell_next").text()).toBe("3");
+    });
+
+    it("applies modifier to the prev number", () => {
+        expect( wrapper.find(".Table__cell_prev").last().text()).toBe("2");
     });
 
 });

@@ -39,7 +39,7 @@ export default function reducer(state = defaultState, action) {
 function generateNumbers(state) {
     let arr = Array(state.tableSize * state.tableSize)
         .fill(0)
-        .map((_, i) => i);
+        .map((_, i) => i + 1);
 
     for (let i = 0; i < arr.length; i++) {
         const rand = Math.floor(Math.random() * arr.length);

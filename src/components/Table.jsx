@@ -1,20 +1,10 @@
+import { useEffect, useState } from 'react';
 import './Table.sass';
 
-const Table = ({
-    numbers = [' '],
-    nextNumber,
-    onCellClicked = () => {},
-}) => {
+const Table = ({ numbers = [' '], nextNumber, onCellClicked = () => {} }) => {
     return (
         <ul className="Table">
             {numbers.map((n, i) => (
-                // <li
-                //     className="Table__cell"
-                //     key={i}
-                //     onClick={() => onCellClicked(n)}
-                // >
-                //     {n}
-                // </li>
                 <Table__cell
                     key={i}
                     number={n}
@@ -27,11 +17,16 @@ const Table = ({
 };
 
 const Table__cell = ({ onClick, number, next }) => {
+    const isNext = number === next;
+    const isPrev = number < next;
+
     const cn = [
-        'Table__cell', 
-        number === next 
-        && 'Table__cell-next'
-    ].filter(Boolean).join(' ');
+        'Table__cell',
+        isNext && 'Table__cell_next',
+        isPrev && 'Table__cell_prev',
+    ]
+        .filter(Boolean)
+        .join(' ');
 
     return (
         <li className={cn} onClick={() => onClick(number)}>

@@ -28,5 +28,12 @@ describe('actions.js', () => {
             expect(dispatch).toBeCalledWith({ type: 'SET_NEXT_NUMBER' });
             expect(store.getState().nextNumber).toBe(2);
         });
+
+        // it('stops the game on last number', () => {
+        //     store.setState({nextNumber: 24});
+        //     goToNextNumber(dispatch);
+        //     expect(dispatch).toBeCalledWith({ type: 'SET_NEXT_NUMBER' });
+        //     expect(store.getState().nextNumber).toBe(25);
+        // });
     });
 });

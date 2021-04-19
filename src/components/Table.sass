@@ -27,3 +27,13 @@ $cell-margin: 5%
             border-radius: $cell-margin * 2
             background-color: white
             z-index: -1
+        &_prev:before 
+            animation: Table__cell_blink 1s forwards
+        
+            @keyframes Table__cell_blink
+                0%
+                    background-color: #7afa7a
+                    
+                100%
+                    background-color: white
+                
