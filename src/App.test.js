@@ -35,15 +35,17 @@ describe('App.js', () => {
         expect(wrapper.find('.Controls__next-number').text()).toBe('NEXT: 2');
     });
     
-    // it('applies modifier to the next cell', () => {
-    //     wrapper.find(StartButton).simulate('click');
+    it('applies modifier to the next cell', () => {
+        wrapper.find(StartButton).simulate('click');
         
-    //     document.dispatchEvent(new KeyboardEvent('keyup', { code: 'Space' }));
-    //     console.log('-----nn', store.getState().numbers);
+        document.dispatchEvent(new KeyboardEvent('keyup', { code: 'Space' }));
+        console.log('-----nn', store.getState().numbers);
+        console.log('-----next', store.getState().nextNumber);
 
-    //     console.log("---", wrapper.html());
-    //     console.log("---", wrapper.find('.Table__cell-next').html());
+        console.log("---", wrapper.html());
+        console.log("---", wrapper.find('.Table__cell_next').hostNodes().html());
 
-    //     expect(wrapper.find('.Table__cell-next').text()).toBe('2');
-    // });
+        expect(wrapper.find('.Table__cell_prev').hostNodes().text()).toBe('1');
+        // expect(wrapper.find('.Table__cell_next').text()).toBe('2');
+    });
 });
